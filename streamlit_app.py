@@ -4,12 +4,12 @@ import streamlit as st
 
 # Show the page title and description.
 st.set_page_config(page_title="Movies dataset - Mini Projekt Streamlit - Interaktywny Dashbord Data Science", page_icon="🎬")
-st.title("🎬 Movies dataset")
+st.title("🎬 Movies dataset - Mini Projekt Streamlit - Interaktywny Dashbord Data Science")
 st.write(
     """
 Ta aplikacja wizualizuje dane pochodzące z serwisu [The Movie Database (TMDB)](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?utm_source=chatgpt.com).
 Pokazuje, które gatunki filmowe osiągały najlepsze wyniki kasowe na przestrzeni lat.
-
+Tłumaczenie i adaptacja: Piotr Orzeszek
 Wystarczy skorzystać z poniższych interaktywnych elementów, aby samodzielnie przeanalizować dane!
     """
 )
