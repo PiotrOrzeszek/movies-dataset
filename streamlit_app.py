@@ -7,9 +7,9 @@ st.set_page_config(page_title="Movies dataset", page_icon="🎬")
 st.title("🎬 Movies dataset")
 st.write(
     """
-    This app visualizes data from [The Movie Database (TMDB)](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata).
-    It shows which movie genre performed best at the box office over the years. Just 
-    click on the widgets below to explore!
+Ta aplikacja wizualizuje dane pochodzące z serwisu [The Movie Database (TMDB)](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?utm_source=chatgpt.com).
+Pokazuje, które gatunki filmowe osiągały najlepsze wyniki kasowe na przestrzeni lat.
+Wystarczy skorzystać z poniższych interaktywnych elementów, aby samodzielnie przeanalizować dane!
     """
 )
 
@@ -28,7 +28,7 @@ df = load_data()
 genres = st.multiselect(
     "Genres",
     df.genre.unique(),
-    ["Action", "Adventure", "Biography", "Comedy", "Drama", "Horror"],
+    ["Akcji", "Przygodowe", "Biograficzne", "Komedie", "Dramaty", "Horrory"],
 )
 
 # Show a slider widget with the years using `st.slider`.
@@ -57,8 +57,8 @@ chart = (
     alt.Chart(df_chart)
     .mark_line()
     .encode(
-        x=alt.X("year:N", title="Year"),
-        y=alt.Y("gross:Q", title="Gross earnings ($)"),
+        x=alt.X("year:N", title="Rok"),
+        y=alt.Y("gross:Q", title="Przychód brutto ($)"),
         color="genre:N",
     )
     .properties(height=320)
