@@ -24,11 +24,41 @@ def load_data():
 
 df = load_data()
 
-# Show a multiselect widget with the genres using `st.multiselect`.
+# Słownik tłumaczeń gatunków filmowych
+genre_translations = {
+    "Action": "Akcji",
+    "Adventure": "Przygodowe",
+    "Biography": "Biograficzne",
+    "Comedy": "Komedie",
+    "Drama": "Dramaty",
+    "Horror": "Horrory",
+    "Animation": "Animowane",
+    "Crime": "Kryminalne",
+    "Documentary": "Dokumentalne",
+    "Family": "Familijne",
+    "Fantasy": "Fantasy",
+    "History": "Historyczne",
+    "Music": "Muzyczne",
+    "Mystery": "Tajemnicze",
+    "Romance": "Romantyczne",
+    "Science Fiction": "Science fiction",
+    "Thriller": "Thrillery",
+    "War": "Wojenne",
+    "Western": "Westerny",
+}
+
 genres = st.multiselect(
-    "Genres",
-    df.genre.unique(),
-    ["Akcji", "Przygodowe", "Biograficzne", "Komedie", "Dramaty", "Horrory"],
+    "Gatunki filmowe",
+    options=df["genre"].unique(),
+    default=[
+        "Action",
+        "Adventure",
+        "Biography",
+        "Comedy",
+        "Drama",
+        "Horror"
+    ],
+    format_func=lambda genre: genre_translations.get(genre, genre)
 )
 
 # Show a slider widget with the years using `st.slider`.
